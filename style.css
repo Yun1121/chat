@@ -9,6 +9,23 @@
   --radius: 14px;
   --radius-sm: 10px;
 }
+/* 固定所有内联 SVG 图标的尺寸 */
+.icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  flex: 0 0 16px;
+}
+
+/* 搜索框里的放大镜定位，且不拦截点击 */
+.search .icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: .6;
+  pointer-events: none;
+}
 
 * { box-sizing: border-box; }
 html, body { height: 100%; margin: 0; }
