@@ -9,24 +9,27 @@
   --radius: 14px;
   --radius-sm: 10px;
 }
-/* 固定所有内联 SVG 图标的尺寸 */
+/* 统一控制所有内嵌 SVG 图标尺寸 */
 .icon {
   width: 16px;
   height: 16px;
   display: inline-block;
-  flex: 0 0 16px;
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .send { position: relative; z-index: 1; }
 .textarea { resize: none; }
 
-/* 搜索框里的放大镜定位，且不拦截点击 */
+/* 搜索框里的放大镜定位与大小 */
 .search .icon {
+  width: 14px;
+  height: 14px;
   position: absolute;
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  opacity: .6;
+  opacity: 0.6;
   pointer-events: none;
 }
 
