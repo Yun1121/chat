@@ -17,6 +17,9 @@
   flex: 0 0 16px;
 }
 
+.send { position: relative; z-index: 1; }
+.textarea { resize: none; }
+
 /* 搜索框里的放大镜定位，且不拦截点击 */
 .search .icon {
   position: absolute;
