@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chatbot · UI Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- 左侧：聊天列表 -->
+    <aside class="sidebar">
+      <div class="s-top">
+        <div class="s-title">会话</div>
+        <div style="flex:1"></div>
+        <button class="btn" id="newBtn" title="新建会话">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14" /></svg>
+          新建
+        </button>
+      </div>
+      <div class="s-search">
+        <div class="search">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          <input id="search" placeholder="搜索会话" />
+        </div>
+      </div>
+      <div class="list" id="chatList"></div>
+    </aside>
+
+    <!-- 右侧：对话区 -->
+    <main class="main">
+      <div class="m-head">
+        <div class="m-title" id="chatTitle">未选择会话</div>
+        <div class="m-actions">
+          <button class="icon-btn" title="更多">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1" /><circle cx="19" cy="12" r="1" /><circle cx="5" cy="12" r="1" /></svg>
+          </button>
+          <button class="icon-btn danger" id="delBtn" title="删除会话">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"></path></svg>
+          </button>
+        </div>
+      </div>
+      <div class="m-body" id="messageList">
+        <div class="empty">在左侧选择一个会话，或点击“新建”开始聊天</div>
+      </div>
+      <div class="composer">
+        <div class="composer-inner">
+          <textarea id="draft" class="textarea" placeholder="输入消息，Ctrl/⌘ + Enter 发送"></textarea>
+          <button id="sendBtn" class="send" disabled>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z" /><path d="M22 2 11 13" /></svg>
+            发送
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
