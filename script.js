@@ -101,6 +101,25 @@ $("#delBtn").onclick = () => {
   state.activeId = state.chats[0]?.id || null;
   renderAll();
 };
+const draft = document.querySelector('#draft');
+const sendBtn = document.querySelector('#sendBtn');
+
+function updateSendBtn() {
+  const active = state.chats.find(c => c.id === state.activeId);
+  const hasText = draft.value.trim().length > 0;
+  sendBtn.disabled = !(active && hasText);
+}
+
+// 输入变化时更新按钮状态
+draft.addEventListener('input', updateSendBtn);
+
+// 每次渲染完列表/消息后也更新一次
+const _renderAll = renderAll;
+renderAll = function() {
+  _renderAll();
+  updateSendBtn();
+};
+
 
 seed();
 renderAll();
